@@ -26,3 +26,11 @@ Incluye capturas de:
 - Interacción con `getNumber` y `setNumber`
 
 ## 📂 Estructura
+
+## 📸 Screenshots
+
+### Verificación en Blockscout
+![Blockscout Verification](./images/verification-blockscout.png)
+
+### Interacción con el contrato
+![Read Contract](./images/read-contract.png)
