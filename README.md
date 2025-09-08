@@ -1,4 +1,4 @@
-[![GitHub release](https://img.shields.io/github/release/danzyly/base-my-storage-contract.svg?style=for-the-badge)](https://github.com/danzyly/base-my-storage-contract/releases/latest)
+[![GitHub release (latest by date)](https://img.shields.io/github/v/release/danyzly/base-my-storage-contract)](https://github.com/danyzly/base-my-storage-contract/releases/latest)
 
 # MyStorage – Base Mainnet
 
