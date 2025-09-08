@@ -10,12 +10,15 @@
 Contrato mínimo en Solidity para guardar un número en la blockchain.  
 Desplegado y verificado en **Base Mainnet** usando **Remix** + **Blockscout**.
 
-- **Red:** Base (chainId `8453`)
-- **Dirección del contrato:** `0xA8888Dd2B317ca5e478401C723Ac0062A03e9A81`
-- **Explorer (Blockscout):** https://base.blockscout.com/address/0xA8888Dd2B317ca5e478401C723Ac0062A03e9A81?tab=contract
-- **Compilador:** Solidity `0.8.24` · **EVM:** Cancun
-- **Optimization:** `enabled`, runs `200`
-- **Licencia:** MIT
+### 📇 Contrato desplegado
+
+| Campo                 | Valor |
+|-----------------------|-------|
+| Red                   | Base (chainId `8453`) |
+| Dirección             | `0xA8888Dd2B317ca5e478401C723Ac0062A03e9A81` |
+| Explorer              | [Blockscout](https://base.blockscout.com/address/0xA8888Dd2B317ca5e478401C723Ac0062A03e9A81?tab=contract) |
+| Compilador (Solidity) | 0.8.24 (EVM: Cancun, Optimizer: enabled, runs 200) |
+| Licencia              | MIT |
 
 ---
 
@@ -100,7 +103,6 @@ const contract = new ethers.Contract(address, abi, wallet);
 
 # Ejecutar (usa una PRIVATE_KEY con algo de ETH en Base)
 node quickstart.js
-
 
 > **Commit message sugerido:**  
 `docs(readme): agregar sección Quickstart (Ethers.js)`
