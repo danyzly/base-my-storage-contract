@@ -1,3 +1,5 @@
+[![GitHub release](https://img.shields.io/github/v/release/danzyly/base-my-storage-contract?style=for-the-badge)](https://github.com/danzyly/base-my-storage-contract/releases)
+
 # MyStorage – Base Mainnet
 
 Contrato mínimo en Solidity para guardar un número en la blockchain.  
