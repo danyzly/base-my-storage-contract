@@ -19,3 +19,35 @@ Desplegado y verificado en **Base Mainnet** usando **Remix** + **Blockscout**.
 ---
 
 ## 📁 Estructura del repo
+
+---
+
+## 📂 Artifacts
+
+Estos archivos permiten a otros interactuar con el contrato fácilmente:
+
+- [`artifacts/MyStorage.abi.json`](artifacts/MyStorage.abi.json): contiene la **ABI**.  
+- [`artifacts/MyStorage.bytecode.json`](artifacts/MyStorage.bytecode.json): contiene el **Bytecode**.  
+
+---
+
+## 📸 Screenshots
+
+- **Deploy en Remix**  
+  ![Remix Deploy](images/deploy.png)
+
+- **Verificación en Blockscout**  
+  ![Blockscout Verification](images/blockscout.png)
+
+---
+
+## 🚀 Cómo interactuar
+
+1. Entra en [Blockscout](https://base.blockscout.com/address/0xA8888Dd2B317ca5e478401C723Ac0062A03e9A81?tab=contract).  
+2. Conecta tu wallet.  
+3. Usa las pestañas **Read / Write Contract** para llamar las funciones:  
+   - `getNumber` → devuelve el número guardado.  
+   - `setNumber` → guarda un nuevo número y emite un evento.  
+
+---
+
