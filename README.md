@@ -2,6 +2,11 @@
 
 # MyStorage – Base Mainnet
 
+[![GitHub release](https://img.shields.io/github/v/release/danyzly/base-my-storage-contract?sort=semver)](https://github.com/danyzly/base-my-storage-contract/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
+[![Open in Remix](https://img.shields.io/badge/Open%20in-Remix-orange)](https://remix.ethereum.org/#url=https://raw.githubusercontent.com/danyzly/base-my-storage-contract/main/contracts/MyStorage.sol)
+
 Contrato mínimo en Solidity para guardar un número en la blockchain.  
 Desplegado y verificado en **Base Mainnet** usando **Remix** + **Blockscout**.
 
