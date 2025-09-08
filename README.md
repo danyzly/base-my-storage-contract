@@ -1,36 +1,21 @@
-# base-my-storage-contract
+# MyStorage – Base Mainnet
 
-Smart contract **MyStorage** desplegado y verificado en **Base Mainnet**  
-Usado como ejemplo de almacenamiento simple con Solidity + Remix + Blockscout.
+Contrato mínimo en Solidity para guardar un número en la blockchain.  
+Desplegado y verificado en **Base Mainnet** usando **Remix** + **Blockscout**.
 
-## 📜 Contrato
-- **Dirección en Base Mainnet:** [0xA8888Dd2B317ca5e478401C723Ac0062A03e9A81](https://base.blockscout.com/address/0xA8888Dd2B317ca5e478401C723Ac0062A03e9A81?tab=contract)
-- **Compilador:** Solidity v0.8.24
-- **EVM Version:** Cancun
-- **License:** MIT
+- **Red:** Base (chainId `8453`)
+- **Dirección del contrato:** `0xA8888Dd2B317ca5e478401C723Ac0062A03e9A81`
+- **Explorer (Blockscout):** https://base.blockscout.com/address/0xA8888Dd2B317ca5e478401C723Ac0062A03e9A81?tab=contract
+- **Compilador:** Solidity `0.8.24` · **EVM:** Cancun
+- **Optimization:** `enabled`, runs `200`
+- **Licencia:** MIT
 
-## ⚙️ Funcionalidad
-El contrato permite:
-- Guardar un número (`setNumber`)
-- Consultar el número (`getNumber`)
-- Emitir un evento `NumberUpdated` cada vez que se actualiza el valor.
+---
 
-## 🚀 Deploy
-1. Compilado y desplegado usando [Remix](https://remix.ethereum.org/).
-2. Red de despliegue: **Base Mainnet (ChainID 8453)**
-3. Verificado en [Blockscout](https://base.blockscout.com/).
+## ✨ ¿Qué hace este contrato?
+- `setNumber(uint256 newNumber)`: guarda un número y emite un evento `NumberUpdated`.
+- `getNumber() → uint256`: devuelve el número guardado.
 
-## 📸 Screenshots
-Incluye capturas de:
-- Verificación del contrato en Blockscout
-- Interacción con `getNumber` y `setNumber`
+---
 
-## 📂 Estructura
-
-## 📸 Screenshots
-
-### Verificación en Blockscout
-![Blockscout Verification](./images/verification-blockscout.png)
-
-### Interacción con el contrato
-![Read Contract](./images/read-contract.png)
+## 📁 Estructura del repo
