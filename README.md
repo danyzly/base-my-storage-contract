@@ -77,7 +77,7 @@ await contract.setNumber(42);
 // Leer el número
 const num = await contract.getNumber();
 console.log("Número guardado:", num);
-```js
+```
 
 ## 📦 Instalación local
 
