@@ -1,13 +1,29 @@
-# Base My Storage Contract
+<div align="center">
+  <h1>📦 Base My Storage Contract</h1>
+  <p>Contrato simple en Solidity, desplegado y verificado en <b>Base Mainnet</b></p>
 
-![Banner](images/banner.png)
+  <img src="images/banner.png" alt="Banner" width="800"/>
 
-[![GitHub release](https://img.shields.io/github/v/release/danyzly/base-my-storage-contract)](https://github.com/danyzly/base-my-storage-contract/releases)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
+  <br/>
 
-Contrato **SimpleStorage** escrito en Solidity y desplegado en **Base Mainnet**, con verificación en **Blockscout**.  
-Este proyecto sirve como ejemplo educativo para desarrolladores que quieran iniciarse en el ecosistema Base y EVM.
+  [![GitHub release](https://img.shields.io/github/v/release/danyzly/base-my-storage-contract)](https://github.com/danyzly/base-my-storage-contract/releases)
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+  [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
+</div>
+
+---
+
+## 📑 Tabla de Contenidos
+- [Contrato desplegado](#-contrato-desplegado)
+- [¿Qué hace este contrato?](#-qué-hace-este-contrato)
+- [Artifacts](#-artifacts)
+- [Screenshots](#-screenshots)
+- [Cómo interactuar](#-cómo-interactuar)
+- [Ejemplo con Ethers.js](#-ejemplo-con-ethersjs)
+- [Instalación local](#-instalación-local)
+- [Licencia](#-licencia)
+- [Contribuciones](#-contribuciones)
+- [Seguridad](#-seguridad)
 
 ---
 
