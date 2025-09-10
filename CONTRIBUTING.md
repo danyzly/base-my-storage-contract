@@ -16,12 +16,6 @@
 - (Opcional) Hardhat o Foundry para pruebas locales  
 
 Instalación local:
-```bash
-git clone https://github.com/danyzly/base-my-storage-contract.git
-cd base-my-storage-contract
-npm install
-
-Instalación local:
 
 ```bash
 git clone https://github.com/danyzly/base-my-storage-contract.git
@@ -31,15 +25,11 @@ npm install
 
 ## 🧩 Estructura básica
 
-contracts/ – Código Solidity del contrato
-
-artifacts/ – ABI y bytecode exportados
-
-images/ – Imágenes usadas en el README
-
-README.md – Documentación principal
-
-SECURITY.md – Política de seguridad y divulgación responsable
+- contracts/ – Código Solidity del contrato
+- artifacts/ – ABI y bytecode exportados
+- images/ – Imágenes usadas en el README
+- README.md – Documentación principal
+- SECURITY.md – Política de seguridad y divulgación responsable
 
 ---
 
@@ -49,11 +39,9 @@ Puedes usar Remix directamente o un entorno local.
 
 Remix (rápido):
 
-Importa el archivo del contrato desde contracts/.
-
-Compila con solc 0.8.24 (EVM: Cancun; optimizer on, runs 200).
-
-Interactúa en “Deploy & Run”.
+- Importa el archivo del contrato desde contracts/.
+- Compila con solc 0.8.24 (EVM: Cancun; optimizer on, runs 200).
+- Interactúa en “Deploy & Run”.
 
 Local (ejemplo con Hardhat):
 
@@ -67,21 +55,16 @@ npx hardhat test
 
 Solidity
 
-Versión: ^0.8.24
-
-Optimizer activado, runs = 200
-
-Usa comentarios natspec en funciones públicas si aplica
-
-Seguridad primero: validaciones de entrada y eventos en cambios de estado
+- Versión: ^0.8.24
+- Optimizer activado, runs = 200
+- Usa comentarios natspec en funciones públicas si aplica
+- Seguridad primero: validaciones de entrada y eventos en cambios de estado
 
 JavaScript/TypeScript
 
-Usa const/let, async/await y manejo explícito de errores
-
-Importa ethers v6: import { ethers } from "ethers";
-
-Formato consistente (Prettier/EditorConfig si se agregan más adelante)
+- Usa const/let, async/await y manejo explícito de errores
+- Importa ethers v6: import { ethers } from "ethers";
+- Formato consistente (Prettier/EditorConfig si se agregan más adelante)
 
 ---
 
@@ -109,32 +92,23 @@ Encabezado ≤ 50 caracteres; cuerpo opcional para más detalles.
 
 ## ✅ Checklist de PR
 
- El PR referencia un issue (si existe)
-
- Descripción clara del cambio
-
- Compila sin errores (Remix/Hardhat)
-
- Cambios de contrato explicados (riesgos/compatibilidad)
-
- Actualizado README.md si corresponde
-
- Incluye capturas o logs si aplica
-
- No incluye secretos/keys ni datos sensibles
+- El PR referencia un issue (si existe)
+- Descripción clara del cambio
+- Compila sin errores (Remix/Hardhat)
+- Cambios de contrato explicados (riesgos/compatibilidad)
+- Actualizado README.md si corresponde
+- Incluye capturas o logs si aplica
+- No incluye secretos/keys ni datos sensibles
 
 ---
 
 ## 🔐 Seguridad
 
-No publiques vulnerabilidades en issues o PR públicos
-
-Reporta de forma privada vía GitHub Security Advisories:
+- No publiques vulnerabilidades en issues o PR públicos
+- Reporta de forma privada vía GitHub Security Advisories:
 👉 https://github.com/danyzly/base-my-storage-contract/security/advisories/new
-
-Incluye: descripción, impacto, prueba de concepto, dirección del contrato y red, versión (tag o commit)
-
-Política completa: ver SECURITY.md
+- Incluye: descripción, impacto, prueba de concepto, dirección del contrato y red, versión (tag o commit)
+- Política completa: ver SECURITY.md
 
 ---
 
