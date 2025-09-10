@@ -1,125 +1,114 @@
-[![GitHub release (latest by date)](https://img.shields.io/github/v/release/danyzly/base-my-storage-contract)](https://github.com/danyzly/base-my-storage-contract/releases/latest)
+# Base My Storage Contract
 
-# MyStorage – Base Mainnet
+![Banner](images/banner.png)
 
-[![GitHub release](https://img.shields.io/github/v/release/danyzly/base-my-storage-contract?sort=semver)](https://github.com/danyzly/base-my-storage-contract/releases)
+[![GitHub release](https://img.shields.io/github/v/release/danyzly/base-my-storage-contract)](https://github.com/danyzly/base-my-storage-contract/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
-[![Open in Remix](https://img.shields.io/badge/Open%20in-Remix-orange)](https://remix.ethereum.org/#url=https://raw.githubusercontent.com/danyzly/base-my-storage-contract/main/contracts/MyStorage.sol)
 
-Contrato mínimo en Solidity para guardar un número en la blockchain.  
-Desplegado y verificado en **Base Mainnet** usando **Remix** + **Blockscout**.
+Contrato **SimpleStorage** escrito en Solidity y desplegado en **Base Mainnet**, con verificación en **Blockscout**.  
+Este proyecto sirve como ejemplo educativo para desarrolladores que quieran iniciarse en el ecosistema Base y EVM.
 
-### 📇 Contrato desplegado
+---
+
+## 📇 Contrato desplegado
 
 | Campo                 | Valor |
 |-----------------------|-------|
 | Red                   | Base (chainId `8453`) |
 | Dirección             | `0xA8888Dd2B317ca5e478401C723Ac0062A03e9A81` |
 | Explorer              | [Blockscout](https://base.blockscout.com/address/0xA8888Dd2B317ca5e478401C723Ac0062A03e9A81?tab=contract) |
-| Compilador (Solidity) | 0.8.24 (EVM: Cancun, Optimizer: enabled, runs 200) |
+| Compilador (Solidity) | 0.8.24 (EVM: Cancun, Optimizer enabled, runs 200) |
 | Licencia              | MIT |
 
 ---
 
-## ✨ ¿Qué hace este contrato?
-- `setNumber(uint256 newNumber)`: guarda un número y emite un evento `NumberUpdated`.
-- `getNumber() → uint256`: devuelve el número guardado.
+## 📖 ¿Qué hace este contrato?
+
+El contrato implementa un **almacenamiento simple de números** en la blockchain.  
+Permite dos operaciones básicas:
+
+- `setNumber(uint256 newNumber)` → guarda un número en la blockchain.  
+- `getNumber()` → devuelve el número almacenado.  
 
 ---
 
-## 📁 Estructura del repo
+## 🛠️ Artifacts
+
+- [MyStorage.abi.json](./artifacts/MyStorage.abi.json)  
+- [MyStorage.bytecode.json](./artifacts/MyStorage.bytecode.json)  
 
 ---
 
-## 📂 Artifacts
+## 🖼️ Screenshots
 
-Estos archivos permiten a otros interactuar con el contrato fácilmente:
-
-- [`artifacts/MyStorage.abi.json`](artifacts/MyStorage.abi.json): contiene la **ABI**.  
-- [`artifacts/MyStorage.bytecode.json`](artifacts/MyStorage.bytecode.json): contiene el **Bytecode**.  
-
----
-
-## 📸 Screenshots
-
-- **Deploy en Remix**  
-  ![Remix Deploy](images/deploy.png)
-
-- **Verificación en Blockscout**  
-  ![Blockscout Verification](images/blockscout.png)
+- [Despliegue en Remix](./images/remix-deploy.png)  
+- [Verificación en Blockscout](./images/blockscout-verify.png)  
 
 ---
 
 ## 🚀 Cómo interactuar
 
-1. Entra en [Blockscout](https://base.blockscout.com/address/0xA8888Dd2B317ca5e478401C723Ac0062A03e9A81?tab=contract).  
-2. Conecta tu wallet.  
-3. Usa las pestañas **Read / Write Contract** para llamar las funciones:  
-   - `getNumber` → devuelve el número guardado.  
-   - `setNumber` → guarda un nuevo número y emite un evento.  
+1. Abre el contrato en [Blockscout](https://base.blockscout.com/address/0xA8888Dd2B317ca5e478401C723Ac0062A03e9A81?tab=contract).  
+2. Conecta tu wallet (ej: MetaMask).  
+3. Usa la pestaña **Read Contract** para leer el número almacenado.  
+4. Usa la pestaña **Write Contract** para actualizarlo con `setNumber`.  
 
 ---
 
-## 🚀 Quickstart (Ethers.js)
+## 💻 Ejemplo con Ethers.js
 
-```
-
-bash
-# en un proyecto Node (fuera de este repo)
-npm i ethers
-// quickstart.js
+```js
 import { ethers } from "ethers";
-
-// ABI: puedes copiarla desde artifacts/MyStorage.abi.json o traerla por URL:
-// https://raw.githubusercontent.com/danyzly/base-my-storage-contract/main/artifacts/MyStorage.abi.json
-const abi = [
-  {
-    "anonymous": false,
-    "inputs":[{"indexed":true,"internalType":"address","name":"user","type":"address"},{"indexed":false,"internalType":"uint256","name":"newNumber","type":"uint256"}],
-    "name":"NumberUpdated","type":"event"
-  },
-  {"inputs":[{"internalType":"uint256","name":"newNumber","type":"uint256"}],"name":"setNumber","outputs":[],"stateMutability":"nonpayable","type":"function"},
-  {"inputs":[],"name":"getNumber","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"}
-];
+import abi from "./artifacts/MyStorage.abi.json";
 
 const provider = new ethers.JsonRpcProvider("https://mainnet.base.org");
-const wallet = new ethers.Wallet(process.env.PRIVATE_KEY, provider);
+const signer = await provider.getSigner();
 
-// Dirección desplegada en Base mainnet:
-const address = "0xA8888Dd2B317ca5e478401C723Ac0062A03e9A81";
-const contract = new ethers.Contract(address, abi, wallet);
+const contract = new ethers.Contract(
+  "0xA8888Dd2B317ca5e478401C723Ac0062A03e9A81",
+  abi,
+  signer
+);
 
-(async () => {
-  // Guardar número
-  const tx = await contract.setNumber(123);
-  console.log("tx sent:", tx.hash);
-  await tx.wait();
+// Guardar un número
+await contract.setNumber(42);
 
-  // Leer número
-  const num = await contract.getNumber();
-  console.log("Número guardado:", num.toString());
-})();
-
-# Ejecutar (usa una PRIVATE_KEY con algo de ETH en Base)
-node quickstart.js
-
-> **Commit message sugerido:**  
-`docs(readme): agregar sección Quickstart (Ethers.js)`
+// Leer el número
+const num = await contract.getNumber();
+console.log("Número guardado:", num);
 
 ---
 
-# 4) Links “raw” a los artefactos (ABI/Bytecode)
+## 📦 Instalación local
 
-**Qué hace:** facilita copiar/consumir ABI/Bytecode sin navegar por GitHub.  
-**Dónde:** en tu sección **Artifacts** debajo de cada ítem añade el link “raw”.
+git clone https://github.com/danyzly/base-my-storage-contract.git
+cd base-my-storage-contract
+npm install
 
-**Pega esto (ajustando tu bloque “Artifacts”):**
-```md
-## 📦 Artifacts
+Puedes compilar y desplegar el contrato usando Remix o configurar un entorno con Hardhat/Foundry.
 
-- **ABI:** [`artifacts/MyStorage.abi.json`](artifacts/MyStorage.abi.json) • raw:  
-  `https://raw.githubusercontent.com/danyzly/base-my-storage-contract/main/artifacts/MyStorage.abi.json`
+---
 
-- **Bytecode:** [`artifacts/MyStorage.bytecode.json`](artifacts/MyStorage.bytecode.json) • raw:  
-  `https://raw.githubusercontent.com/danyzly/base-my-storage-contract/main/artifacts/MyStorage.bytecode.json`
+## 📜 Licencia
+
+Este proyecto está bajo la licencia MIT.
+Consulta el archivo LICENSE
+ para más detalles.
+
+---
+
+## 🙌 Contribuciones
+
+¡Las contribuciones son bienvenidas!
+Por favor revisa la guía en CONTRIBUTING.md
+ antes de enviar un pull request.
+
+---
+
+## 🔒 Seguridad
+
+Si encuentras alguna vulnerabilidad, revisa la política de seguridad
+
+y abre un issue de forma responsable.
+
