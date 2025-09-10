@@ -140,8 +140,6 @@ Por favor revisa la guía en CONTRIBUTING.md
 
 ## 🔒 Seguridad
 
-## 🔒 Seguridad
-
 Si encuentras una vulnerabilidad o comportamiento inseguro, **no abras un issue público**.  
 Por favor sigue este proceso de reporte responsable:
 
