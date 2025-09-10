@@ -140,7 +140,10 @@ Por favor revisa la guía en CONTRIBUTING.md
 
 ## 🔒 Seguridad
 
-Si detectas una vulnerabilidad o comportamiento inseguro:
+## 🔒 Seguridad
+
+Si encuentras una vulnerabilidad o comportamiento inseguro, **no abras un issue público**.  
+Por favor sigue este proceso de reporte responsable:
 
 1) **No** abras un issue/PR público.
 2) Prepara un reporte privado con:
