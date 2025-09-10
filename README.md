@@ -138,20 +138,21 @@ Por favor revisa la guía en CONTRIBUTING.md
 
 ---
 
-## 🔒 Seguridad
+## 🔒 Seguridad  
 
 Si encuentras una vulnerabilidad o comportamiento inseguro, **no abras un issue público**.  
 Por favor sigue este proceso de reporte responsable:
 
-1) **No** abras un issue/PR público.
-2) Prepara un reporte privado con:
-   - Descripción y **impacto** (fondos a riesgo, DoS, lectura/escritura indebida, etc.).
-   - **Prueba de concepto** (pasos, script, o tx hash).
-   - **Dirección del contrato** y **red** (Base mainnet), versión (tag o commit).
-3) Envíalo de forma **privada** desde GitHub:  
-   👉 **Security Advisories**: https://github.com/danyzly/base-my-storage-contract/security/advisories/new
+1. **No abras un issue/PR público**.  
+2. Prepara un reporte privado con:  
+   - **Descripción e impacto** (fondos a riesgo, DoS, lectura/escritura indebida, etc.).  
+   - **Prueba de concepto** (pasos, script o tx hash).  
+   - **Dirección del contrato y red** (Base mainnet), versión (tag o commit).  
+3. Envíalo de forma **privada** desde GitHub:  
+   👉 [**Security Advisories**](https://github.com/danyzly/base-my-storage-contract/security/advisories/new)  
 
-Política completa, SLA y alcance: consulta **[SECURITY.md](./SECURITY.md)**.
+---
 
+Política completa, SLA y alcance: consulta [**SECURITY.md**](./SECURITY.md).  
 
-
+⚠️ *El equipo revisará y responderá lo antes posible. Agradecemos la divulgación responsable.*  
