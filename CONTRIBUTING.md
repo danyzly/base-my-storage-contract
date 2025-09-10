@@ -21,7 +21,13 @@ git clone https://github.com/danyzly/base-my-storage-contract.git
 cd base-my-storage-contract
 npm install
 
----
+Instalación local:
+
+```bash
+git clone https://github.com/danyzly/base-my-storage-contract.git
+cd base-my-storage-contract
+npm install
+```
 
 ## 🧩 Estructura básica
 
