@@ -78,8 +78,6 @@ await contract.setNumber(42);
 const num = await contract.getNumber();
 console.log("Número guardado:", num);
 
----
-
 ## 📦 Instalación local
 
 git clone https://github.com/danyzly/base-my-storage-contract.git
