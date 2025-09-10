@@ -1,29 +1,34 @@
-<div align="center">
-  <h1>📦 Base My Storage Contract</h1>
-  <p>Contrato simple en Solidity, desplegado y verificado en <b>Base Mainnet</b></p>
+# Base My Storage Contract
 
-  <img src="images/banner.png" alt="Banner" width="800"/>
+![Base – Smart Contract Verified on Base Mainnet](images/banner.png)
 
-  <br/>
+[![GitHub release](https://img.shields.io/github/v/release/danyzly/base-my-storage-contract)](https://github.com/danyzly/base-my-storage-contract/releases)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
+[![Verified on Blockscout](https://img.shields.io/badge/Verified-Blockscout-1f6feb.svg)](https://base.blockscout.com/address/0xA8888Dd2B317ca5e478401C723Ac0062A03e9A81?tab=contract)
 
-  [![GitHub release](https://img.shields.io/github/v/release/danyzly/base-my-storage-contract)](https://github.com/danyzly/base-my-storage-contract/releases)
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-  [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
-</div>
+<p align="center">
+  <a href="https://base.blockscout.com/address/0xA8888Dd2B317ca5e478401C723Ac0062A03e9A81?tab=contract">Explorer</a> ·
+  <a href="https://base.blockscout.com/address/0xA8888Dd2B317ca5e478401C723Ac0062A03e9A81?tab=read_contract">Read</a> ·
+  <a href="https://base.blockscout.com/address/0xA8888Dd2B317ca5e478401C723Ac0062A03e9A81?tab=write_contract">Write</a>
+</p>
+
+Contrato **SimpleStorage** escrito en Solidity y desplegado en **Base Mainnet**, con verificación en **Blockscout**.  
+Este proyecto sirve como ejemplo educativo para desarrolladores que quieran iniciarse en el ecosistema Base y EVM.
 
 ---
 
-## 📑 Tabla de Contenidos
-- [Contrato desplegado](#-contrato-desplegado)
-- [¿Qué hace este contrato?](#-qué-hace-este-contrato)
-- [Artifacts](#-artifacts)
-- [Screenshots](#-screenshots)
-- [Cómo interactuar](#-cómo-interactuar)
-- [Ejemplo con Ethers.js](#-ejemplo-con-ethersjs)
-- [Instalación local](#-instalación-local)
-- [Licencia](#-licencia)
-- [Contribuciones](#-contribuciones)
-- [Seguridad](#-seguridad)
+## 📚 Tabla de Contenidos
+- [📇 Contrato desplegado](#-contrato-desplegado)
+- [📖 ¿Qué hace este contrato?](#-qué-hace-este-contrato)
+- [🛠️ Artifacts](#️-artifacts)
+- [🖼️ Screenshots](#️-screenshots)
+- [🚀 Cómo interactuar](#-cómo-interactuar)
+- [💻 Ejemplo con Ethers.js](#-ejemplo-con-ethersjs)
+- [📦 Instalación local](#-instalación-local)
+- [📜 Licencia](#-licencia)
+- [🙌 Contribuciones](#-contribuciones)
+- [🔒 Seguridad](#-seguridad)
 
 ---
 
@@ -58,8 +63,8 @@ Permite dos operaciones básicas:
 
 ## 🖼️ Screenshots
 
-- [Despliegue en Remix](./images/remix-deploy.png)  
-- [Verificación en Blockscout](./images/blockscout-verify.png)  
+- [Despliegue en Remix](./images/read-contract.png.jpeg)  
+- [Verificación en Blockscout](./images/verification-blockscout.png.jpeg)  
 
 ---
 
@@ -92,7 +97,19 @@ await contract.setNumber(42);
 
 // Leer el número
 const num = await contract.getNumber();
-console.log("Número guardado:", num);
+console.log("Número guardado:", num.toString());
+
+Tip (solo navegador / MetaMask, sin Node):
+
+<script type="module">
+  import { ethers } from "https://esm.sh/ethers@6";
+  const abi = await (await fetch("./artifacts/MyStorage.abi.json")).json();
+  const provider = new ethers.BrowserProvider(window.ethereum);
+  const signer = await provider.getSigner();
+  const c = new ethers.Contract("0xA8888Dd2B317ca5e478401C723Ac0062A03e9A81", abi, signer);
+  console.log("getNumber:", (await c.getNumber()).toString());
+</script>
+
 ```
 
 ## 📦 Instalación local
@@ -123,7 +140,17 @@ Por favor revisa la guía en CONTRIBUTING.md
 
 ## 🔒 Seguridad
 
-Si encuentras alguna vulnerabilidad, revisa la política de seguridad
+Si detectas una vulnerabilidad o comportamiento inseguro:
 
-y abre un issue de forma responsable.
+1) **No** abras un issue/PR público.
+2) Prepara un reporte privado con:
+   - Descripción y **impacto** (fondos a riesgo, DoS, lectura/escritura indebida, etc.).
+   - **Prueba de concepto** (pasos, script, o tx hash).
+   - **Dirección del contrato** y **red** (Base mainnet), versión (tag o commit).
+3) Envíalo de forma **privada** desde GitHub:  
+   👉 **Security Advisories**: https://github.com/danyzly/base-my-storage-contract/security/advisories/new
+
+Política completa, SLA y alcance: consulta **[SECURITY.md](./SECURITY.md)**.
+
+
 
